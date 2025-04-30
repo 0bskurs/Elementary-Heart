@@ -73,11 +73,11 @@ public class Player : MonoBehaviour
 
         if (moveX > 0)
         {
-            gameObject.transform.localScale = new Vector3(2f, 2f, 2f);
+            spriteRenderer.flipX = false;
         }
         else if (moveX < 0)
         {
-            gameObject.transform.localScale = new Vector3(-2f, 2f, 2f);
+            spriteRenderer.flipX = true;  
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && OnGround == true)
@@ -113,9 +113,10 @@ public class Player : MonoBehaviour
 
     private IEnumerator FlashRoutine()
     {
-        spriteRenderer.material = flashMaterial;
+        var currentColor = spriteRenderer.color;
+        spriteRenderer.color = new Color(currentColor.r, currentColor.g, currentColor.b, .7f);
         yield return new WaitForSeconds(duration);
-        spriteRenderer.material = originalMaterial;
+        spriteRenderer.color = currentColor;
         flashRoutine = null;
     }
 
