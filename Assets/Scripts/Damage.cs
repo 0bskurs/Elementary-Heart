@@ -26,7 +26,7 @@ public class Damage : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerMovement.KBCounter = playerMovement.KBTotalTime;
-            if(collision.transform.position.x <= transform.position.x)
+            if (collision.transform.position.x <= transform.position.x)
             {
                 playerMovement.KnockFromRight = true;
             }
@@ -36,8 +36,14 @@ public class Damage : MonoBehaviour
             }
 
             pHealth.health -= damage;
-            StartCoroutine(IFrames());
-
+            if (pHealth.health > 0)
+            {
+                StartCoroutine(IFrames());
+            }
+            else
+            {
+                Physics2D.IgnoreLayerCollision(8, 9, false);
+            }
         }
     }
     IEnumerator IFrames()

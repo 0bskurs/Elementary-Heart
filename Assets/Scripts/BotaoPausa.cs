@@ -21,4 +21,19 @@ public class BotaoPausa : MonoBehaviour
         SceneManager.UnloadScene(2);
         yield return new WaitForSeconds(0.3f);
     }
+    public static void Open()
+    {
+        SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+    }
+    public void Opcoes()
+    {
+        ScriptOpcoes.Open(2);
+        SceneManager.UnloadScene(2);
+    }
+    public void Principal()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+        
+    }
 }

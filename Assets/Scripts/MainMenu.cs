@@ -8,4 +8,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+    public void Opcoes()
+    {
+        ScriptOpcoes.Open(0);
+    }
+    public void Sair()
+    {
+        Application.Quit();
+    }
 }
