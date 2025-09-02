@@ -7,7 +7,7 @@ Este projeto teve como objetivo desenvolver um jogo de plataforma 2D, utilizando
   - Utilizamos a engine Unity como uma plataforma de entrada para entrar no mundo de desenvolvimento de jogos.
 </p>
 
-### Linguagem de programação
+## Linguagem de programação
 <p>
   - Para este projeto utilizamos o C# como linguagem de programação príncipal.
 </p>
